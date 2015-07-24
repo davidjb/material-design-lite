@@ -67,8 +67,10 @@ MaterialLayout.prototype.CssClasses_ = {
   CONTAINER: 'mdl-layout__container',
   HEADER: 'mdl-layout__header',
   DRAWER: 'mdl-layout__drawer',
+  DRAWER_RIGHT: 'mdl-layout__drawer--right',
   CONTENT: 'mdl-layout__content',
   DRAWER_BTN: 'mdl-layout__drawer-button',
+  DRAWER_BTN_RIGHT: 'mdl-layout__drawer-button--right',
 
   ICON: 'material-icons',
 
@@ -291,6 +293,10 @@ MaterialLayout.prototype.init = function() {
       var drawerButton = document.createElement('div');
       drawerButton.classList.add(this.CssClasses_.DRAWER_BTN);
 
+      if (this.drawer_.classList.contains(this.CssClasses_.DRAWER_RIGHT)) {
+        drawerButton.classList.add(this.CssClasses_.DRAWER_BTN_RIGHT);
+      }
+
       if (this.drawer_.classList.contains(this.CssClasses_.ON_LARGE_SCREEN)) {
         //If drawer has ON_LARGE_SCREEN class then add it to the drawer toggle button as well.
         drawerButton.classList.add(this.CssClasses_.ON_LARGE_SCREEN);
@@ -300,7 +306,7 @@ MaterialLayout.prototype.init = function() {
       }
       var drawerButtonIcon = document.createElement('i');
       drawerButtonIcon.classList.add(this.CssClasses_.ICON);
-      drawerButtonIcon.textContent = this.Constant_.MENU_ICON;
+      drawerButtonIcon.textContent = this.drawer_.dataset.icon || this.Constant_.MENU_ICON;
       drawerButton.appendChild(drawerButtonIcon);
       drawerButton.addEventListener('click',
           this.drawerToggleHandler_.bind(this));

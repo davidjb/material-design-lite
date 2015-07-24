@@ -75,7 +75,6 @@
     flex-grow: 1;
   }
 
-
   // Drawer.
   .mdl-layout__drawer {
     display: flex;
@@ -110,6 +109,18 @@
     overflow-y: auto;
 
     z-index: 5;
+
+    &.mdl-layout__drawer--right {
+        left: 100%;
+        border-left: 1px solid $layout-drawer-border-color;
+        // Offscreen right
+        transform: translateX($layout-drawer-width);
+
+        // Shown
+        &.is-visible {
+        transform: translateX(-$layout-drawer-width);
+        }
+    }
 
     &.is-visible {
       transform: translateX(0);
@@ -188,6 +199,11 @@
     color: $layout-header-text-color;
 
     z-index: 4;
+
+    &.mdl-layout__drawer-button--right {
+        right: 0;
+        left: auto !important;
+    }
 
     .mdl-layout__header & {
       position: absolute;
