@@ -1,12 +1,15 @@
 # Material Design Lite
 
-> An implementation of [Material Design](http://www.google.com/design/spec/material-design/introduction.html)
+> A customised implementation of [Material Design](http://www.google.com/design/spec/material-design/introduction.html)
 components in vanilla CSS, JS, and HTML
 
 Material Design Lite (MDL) lets you add a Material Design look and feel to your
 static content websites. It doesn't rely on any JavaScript frameworks or
 libraries. Optimized for cross-device use, gracefully degrades in older
 browsers, and offers an experience that is accessible from the get-go.
+
+This *customised version* adds a few things or customisations that are very
+useful, though they may not follow the Material Design spec directly.
 
 
 ## Use MDL on your site?
